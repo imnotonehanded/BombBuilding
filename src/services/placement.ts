@@ -21,10 +21,15 @@ const PlacementService = Knit.CreateService({
 		const top: Vector3 = new Vector3(0, 0, -1);
 		const right: Vector3 = new Vector3(-1, 0, 0);
 
-		const cf = Workspace.FindFirstChild(`${player.Name}_canvas`);
-		if (cf && cf.IsA("Part")) {
-			const cff: CFrame = cf.CFrame.mul(CFrame.fromMatrix(back.mul(cf.Size.div(2)).mul(-1), right, top, back));
-			const size: Vector2 = new Vector2(cf.Size.mul(right).Magnitude, cf.Size.mul(top).Magnitude);
+		const cf = Workspace.canvas.FindFirstChild(`${player.Name}_canvas`);
+		if (cf && cf.IsA("Model") && cf.PrimaryPart) {
+			const cff: CFrame = cf.PrimaryPart.CFrame.mul(
+				CFrame.fromMatrix(back.mul(cf.PrimaryPart.Size.div(2)).mul(-1), right, top, back),
+			);
+			const size: Vector2 = new Vector2(
+				cf.PrimaryPart.Size.mul(right).Magnitude,
+				cf.PrimaryPart.Size.mul(top).Magnitude,
+			);
 
 			return size;
 		} else {
@@ -36,10 +41,15 @@ const PlacementService = Knit.CreateService({
 		const top: Vector3 = new Vector3(0, 0, -1);
 		const right: Vector3 = new Vector3(-1, 0, 0);
 
-		const cf = Workspace.FindFirstChild(`${player.Name}_canvas`);
-		if (cf && cf.IsA("Part")) {
-			const cff: CFrame = cf.CFrame.mul(CFrame.fromMatrix(back.mul(cf.Size.div(2)).mul(-1), right, top, back));
-			const size: Vector2 = new Vector2(cf.Size.mul(right).Magnitude, cf.Size.mul(top).Magnitude);
+		const cf = Workspace.canvas.FindFirstChild(`${player.Name}_canvas`);
+		if (cf && cf.IsA("Model") && cf.PrimaryPart) {
+			const cff: CFrame = cf.PrimaryPart.CFrame.mul(
+				CFrame.fromMatrix(back.mul(cf.PrimaryPart.Size.div(2)).mul(-1), right, top, back),
+			);
+			const size: Vector2 = new Vector2(
+				cf.PrimaryPart.Size.mul(right).Magnitude,
+				cf.PrimaryPart.Size.mul(top).Magnitude,
+			);
 
 			return cff;
 		} else {
