@@ -20,14 +20,14 @@
 					"$className": "Folder",
 					"@rbxts": {
 						"$path": "node_modules/@rbxts"
+					},
+					"@flamework": {
+						"$path": "node_modules/@flamework"
 					}
 				}
 			},
 			"Shared": {
 				"$path": "out/shared"
-			},
-			"Controllers" : {
-				"$path": "out/controllers"
 			}
 		},
 		"StarterPlayer": {
@@ -55,12 +55,6 @@
 			"$className": "SoundService",
 			"$properties": {
 				"RespectFilteringEnabled": true
-			}
-		},
-		"ServerStorage": {
-			"$className": "ServerStorage",
-			"Services": {
-				"$path": "out/services"
 			}
 		}
 	}
