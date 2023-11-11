@@ -25,6 +25,9 @@
 			},
 			"Shared": {
 				"$path": "out/shared"
+			},
+			"Controllers" : {
+				"$path": "out/controllers"
 			}
 		},
 		"StarterPlayer": {
@@ -52,6 +55,12 @@
 			"$className": "SoundService",
 			"$properties": {
 				"RespectFilteringEnabled": true
+			}
+		},
+		"ServerStorage": {
+			"$className": "ServerStorage",
+			"Services": {
+				"$path": "out/services"
 			}
 		}
 	}
